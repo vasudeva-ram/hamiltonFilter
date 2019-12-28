@@ -7,17 +7,17 @@ This filter assumes a linear projection using OLS, as Hamilton suggests (richer 
 
 ## Parameters: 
 array:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Pandas Series  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; The time series to apply the filter to.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; The time series to apply the filter to.
 
 p:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; int  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Number of most recent lags of data of the time series. Default, as suggested by Hamilton for quarterly data, is 4
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Number of most recent lags of data of the time series. Default, as suggested by Hamilton for quarterly data, is 4
         
 h:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; int  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Number of periods-ahead forecast to determine the "trend". Default, as suggested by Hamilton for quarterly data, is 8.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Number of periods-ahead forecast to determine the "trend". Default, as suggested by Hamilton for quarterly data, is 8.
 
 ## Returns:
 pred:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Pandas Dataframe  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; The series of h-period ahead linear forecasts of the time series, based on p periods of data.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; The series of h-period ahead linear forecasts of the time series, based on p periods of data.
         
 cycle:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Pandas Dataframe  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; The deviations of the actual data from the predicted time series.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; The deviations of the actual data from the predicted time series.
