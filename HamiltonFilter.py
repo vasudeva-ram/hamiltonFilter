@@ -20,7 +20,7 @@ def hamiltonFilter(array, p: int = 4, h: int = 8):
     y = pd.DataFrame(array, columns = ['Y'])
     y.dropna(inplace=True)    
     
-    # Creating X matrix
+    # Creating X matrix - break off as separate function
     x = y[['Y']].copy()
     x.rename(columns = {'Y':'lagP'}, inplace=True)
     x['lagP'] = x['lagP'].shift(h)
@@ -34,13 +34,13 @@ def hamiltonFilter(array, p: int = 4, h: int = 8):
     x.insert(loc=0, column='const',value=1)
     x.set_index(ind, inplace = True)
     
-    # Prepping for OLS
+    # Prepping for OLS - break off as separate function
     lags = h + p -1
     y = y[lags:]
     x = x[lags:]
 #    n = y.shape[0]
     
-    #OlS
+    #OlS - break off as separate function
     xT = x.T
     inv = pd.DataFrame(np.linalg.pinv(xT@x))
     xTy = xT@(np.asarray(y))
